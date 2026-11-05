@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formation des contrôleurs – Vanguard by Camport</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2a43;--bg:#f3f6f9;--card:#fff;--text:#1c2b3a;--mut:#5b6b7b;--line:#d5dee7;--sig:#e8a317;--p1:#c0392b;--p2:#e67e22;--p3:#d4a017;--p4:#3c8d5a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#0a1a2b;--bg:#101c29;--card:#172636;--text:#e6edf3;--mut:#9fb0c0;--line:#2a3d50}}
+:root[data-theme="dark"]{--ink:#0a1a2b;--bg:#101c29;--card:#172636;--text:#e6edf3;--mut:#9fb0c0;--line:#2a3d50}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Source Sans 3",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.15;margin:0 0 .6em}
+nav{position:sticky;top:0;background:var(--ink);z-index:5;display:flex;gap:18px;overflow-x:auto;padding:12px 20px;white-space:nowrap}
+nav a{color:#cfe0f0;text-decoration:none;font-weight:600;font-size:15px}nav a:hover{color:var(--sig)}
+.hero{background:var(--ink);color:#fff;padding:56px 20px 64px}
+.wrap{max-width:900px;margin:0 auto}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:800;max-width:15ch}
+.hero p{max-width:55ch;color:#cfe0f0}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.facts span{border:1px solid #3a5875;border-radius:20px;padding:4px 14px;font-size:15px}
+.btn{display:inline-block;background:var(--sig);color:#1a1200;font-weight:700;padding:12px 22px;border-radius:8px;text-decoration:none}
+section{padding:44px 20px}section h2{font-size:1.8rem}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;padding:14px 0;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--sig);font-weight:800}details[open] summary::after{content:"−"}
+summary:focus-visible,.btn:focus-visible,button:focus-visible,nav a:focus-visible{outline:3px solid var(--sig);outline-offset:2px}
+details ul{margin:0 0 14px;padding-left:20px;color:var(--text)}
+.dur{color:var(--mut);font-weight:400;white-space:nowrap}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps li{counter-increment:s;background:var(--card);border-left:4px solid var(--sig);padding:12px 16px;margin-bottom:10px;border-radius:0 8px 8px 0}
+.steps li::before{content:counter(s) ". ";font-weight:800}
+.prio{display:grid;gap:10px}
+.prio div{background:var(--card);border:1px solid var(--line);border-left:8px solid;border-radius:8px;padding:12px 16px}
+.prio b{display:block}
+.q{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+.q p{font-weight:600;margin:0 0 8px}
+.q label{display:block;padding:6px 8px;border-radius:6px;cursor:pointer}
+.q label:hover{background:var(--bg)}.ok{color:var(--p4);font-weight:600}.ko{color:var(--p1);font-weight:600}
+button{font:inherit;font-weight:700;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:12px 22px;cursor:pointer}
+#res{margin-top:14px;font-weight:700;font-size:1.1rem}
+.note{background:var(--card);border:1px dashed var(--sig);border-radius:8px;padding:12px 16px;color:var(--mut);font-size:15px}
+footer{background:var(--ink);color:#cfe0f0;padding:32px 20px;font-size:15px}footer a{color:var(--sig)}
+</style>
+</head>
+<body>
+<nav aria-label="Navigation"><a href="#top" style="color:#fff;font-weight:800">Vanguard by Camport</a><a href="#modules">Modules</a><a href="#nuit">Service de nuit</a><a href="#incidents">Incidents</a><a href="#priorites">Priorités</a><a href="#quiz">Quiz</a><a href="#contact">Contact</a></nav>
+
+<header class="hero"><div class="wrap">
+<h1>Former les contrôleurs qui veillent sur les sites CAMUSAT</h1>
+<p>Vanguard by Camport assure la supervision des vigiles de nuit et des caméras V380 4G. Ce site réunit le manuel de formation : rôles, procédures, alertes et évaluation.</p>
+<div class="facts"><span>3 jours de formation</span><span>2 nuits pratiques encadrées</span><span>8 modules</span></div>
+<a class="btn" href="#quiz">Passer le quiz d’évaluation</a>
+</div></header>
+
+<section id="modules"><div class="wrap">
+<h2>Les 8 modules</h2>
+<details><summary>Rôle, discipline et chaîne hiérarchique <span class="dur">1 h 30</span></summary><ul><li>Missions de Vanguard by Camport et exigences du contrat</li><li>Fonctions du vigile, du contrôleur, de l’opérateur vidéo, du responsable des opérations et du NOC</li><li>Procédures d’escalade, ponctualité, discrétion, rigueur</li></ul></details>
+<details><summary>Contrôle des vigiles et des prises de service <span class="dur">2 h</span></summary><ul><li>Comparer le planning à la liste officielle des agents</li><li>Confirmer la présence par les canaux autorisés</li><li>Relève : le remplaçant est confirmé avant le départ du précédent</li><li>Consigner les écarts sans conclure trop vite</li></ul></details>
+<details><summary>Vidéosurveillance et caméras V380 4G <span class="dur">2 h 30</span></summary><ul><li>Contrôler la liste des caméras et l’image en direct</li><li>Repérer image figée, obstruction, caméra déconnectée ou déplacée</li><li>Une perte de surveillance est une anomalie à évaluer, pas une intrusion automatique</li><li>Respecter les autorisations et les mots de passe</li></ul></details>
+<details><summary>Contrôle des rondes et des sites <span class="dur">1 h 30</span></summary><ul><li>Suivre les horaires et points de contrôle</li><li>Vérifier par appel, registre, horodatage ou visite physique</li><li>Contrôler accès, clôtures, portes, cadenas et éclairage</li></ul></details>
+<details><summary>Détection des risques et gestion des incidents <span class="dur">2 h</span></summary><ul><li>Reconnaître intrusion, vandalisme, câble coupé, caméra déplacée</li><li>Vérifier sans exposer le vigile ni le contrôleur</li><li>Ne jamais envoyer un agent seul face à une personne potentiellement dangereuse</li></ul></details>
+<details><summary>Communication et remontée d’information <span class="dur">1 h</span></summary><ul><li>Langage clair, bref, factuel et respectueux</li><li>Alertes par le canal officiel, avec trace écrite</li><li>Une alerte urgente n’attend jamais la chaîne hiérarchique</li></ul></details>
+<details><summary>Rapports, registres et traçabilité <span class="dur">1 h</span></summary><ul><li>Noter heure de détection, heure de transmission, personnes informées</li><li>Distinguer faits observés, déclarations et hypothèses</li></ul></details>
+<details><summary>Éthique, confidentialité et protection des informations <span class="dur">1 h</span></summary><ul><li>Ne pas diffuser images, vidéos ni identifiants</li><li>Ne jamais falsifier une ronde, une présence ou un rapport</li></ul></details>
+</div></section>
+
+<section id="nuit"><div class="wrap">
+<h2>Déroulé d’un service de nuit</h2>
+<ol class="steps">
+<li><b>Préparation.</b> Planning, noms des agents, incidents précédents, état des caméras, moyens de communication.</li>
+<li><b>Prises de poste.</b> Contacter les agents, noter heure, nom, résultat et anomalies.</li>
+<li><b>Vérification vidéo.</b> Contrôler les caméras, signaler les pertes de surveillance, vérifier le rétablissement.</li>
+<li><b>Vérification des rondes.</b> Comparer les comptes rendus aux éléments disponibles, relancer si besoin.</li>
+<li><b>Traitement des anomalies.</b> Évaluer la gravité, protéger les personnes, alerter, consigner.</li>
+<li><b>Passation.</b> Bilan des sites et incidents, dossiers non résolus, confirmation de réception.</li>
+</ol></div></section>
+
+<section id="incidents"><div class="wrap">
+<h2>Que faire face à…</h2>
+<details><summary>Un vigile injoignable</summary><ul><li>Noter l’heure du premier appel sans réponse</li><li>Réessayer par le canal professionnel, vérifier le réseau</li><li>Faire vérifier physiquement par le responsable de secteur ou le contrôleur terrain</li><li>Si un danger est possible, lancer la procédure d’urgence</li><li>L’absence de réponse ne prouve pas un abandon de poste</li></ul></details>
+<details><summary>Une caméra V380 qui affiche « Reconnexion »</summary><ul><li>Noter le site et l’heure de perte d’image</li><li>Vérifier les autres caméras et joindre le vigile</li><li>Faire contrôler alimentation et réseau 4G par une personne autorisée</li><li>Prévenir le responsable technique si la panne persiste</li></ul></details>
+<details><summary>Une intrusion ou une présence suspecte</summary><ul><li>Vérifier les images sans retarder la mise en sécurité</li><li>Demander des faits au vigile sans l’exposer</li><li>Alerter la hiérarchie et les secours si nécessaire</li><li>Préserver les images, sans les modifier ni les diffuser</li></ul></details>
+<details><summary>Un câble coupé ou un cadenas forcé</summary><ul><li>Protéger personnes et périmètre sans risque inutile</li><li>Faire constater les dégâts sans toucher aux indices</li><li>Informer la hiérarchie et CAMUSAT</li><li>Ne désigner aucun responsable sans preuve</li></ul></details>
+<details><summary>L’absence d’un vigile à la relève</summary><ul><li>Confirmer l’absence et vérifier le planning</li><li>Contacter le remplaçant, le responsable de secteur, la hiérarchie</li><li>Organiser un remplacement autorisé</li><li>Ne pas considérer le site couvert sans présence confirmée</li></ul></details>
+</div></section>
+
+<section id="priorites"><div class="wrap">
+<h2>Priorité des alertes</h2>
+<div class="prio">
+<div style="border-left-color:var(--p1)"><b>P1 – Critique</b>Intrusion en cours, agression, incendie. Alerte immédiate et protection des personnes.</div>
+<div style="border-left-color:var(--p2)"><b>P2 – Élevé</b>Vigile absent sans remplacement, clôture forcée. Escalade rapide et mesure compensatoire.</div>
+<div style="border-left-color:var(--p3)"><b>P3 – Modéré</b>Retard de ronde, anomalie de communication. Vérification, relance, compte rendu.</div>
+<div style="border-left-color:var(--p4)"><b>P4 – Faible</b>Défaut administratif sans impact immédiat. Enregistrement et correction.</div>
+</div>
+<p class="note">Niveaux proposés en interne, à valider avec la direction. Une alerte critique n’attend jamais un rapport.</p>
+</div></section>
+
+<section id="quiz"><div class="wrap">
+<h2>Quiz d’évaluation</h2>
+<p>Seuil suggéré : 5 bonnes réponses sur 6.</p>
+<form id="f" onsubmit="return false"></form>
+<button id="go" type="button">Corriger mes réponses</button>
+<div id="res" role="status"></div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+<h3>Vanguard by Camport</h3>
+<p>Contact : Ganamou Akaou Charles, coordinateur régional Yaoundé<br><a href="mailto:charlesganamou@gmail.com">charlesganamou@gmail.com</a><br>Tél : <a href="tel:+237688138561">688 138 561</a> / <a href="tel:+237694125251">694 125 251</a></p>
+<p>Document interne de formation, à valider par la direction avant application.</p>
+</div></footer>
+
+<script>
+var Q=[
+["Un vigile ne répond pas à votre appel. Bonne réaction ?",["Déclarer qu’il a abandonné son poste","Tenter de le joindre, vérifier, escalader selon la procédure","Attendre la fin de la nuit"],1],
+["Une caméra V380 affiche « Reconnexion ». Que faire ?",["Conclure à une intrusion","Ignorer si le vigile est présent","Vérifier, alerter si nécessaire, suivre le rétablissement"],2],
+["Une intrusion dangereuse est visible. Priorité ?",["Protéger les personnes et alerter sans délai","Terminer le rapport journalier","Attendre l’autorisation d’écrire un compte rendu"],0],
+["Une ronde est déclarée mais rien ne la confirme. Que noter ?",["Ronde effectuée","Ronde déclarée, vérification en attente","Ronde fictive"],1],
+["Qui peut recevoir les images d’un site CAMUSAT ?",["Toute personne qui les demande","Seulement les personnes autorisées","Tout le groupe WhatsApp"],1],
+["Quand clôturer une panne de caméra ?",["Dès que le technicien est informé","Après un délai arbitraire","Après vérification du rétablissement"],2]];
+var f=document.getElementById("f");
+Q.forEach(function(q,i){var d=document.createElement("fieldset");d.className="q";d.style.margin="0 0 14px";
+var h="<legend><b>"+(i+1)+". "+q[0]+"</b></legend>";
+q[1].forEach(function(o,j){h+='<label><input type="radio" name="q'+i+'" value="'+j+'"> '+o+"</label>"});
+h+='<div class="fb"></div>';d.innerHTML=h;f.appendChild(d)});
+document.getElementById("go").onclick=function(){
+var s=0,done=0;
+Q.forEach(function(q,i){var c=f.querySelector('input[name="q'+i+'"]:checked'),fb=f.querySelectorAll(".fb")[i];
+if(!c){fb.textContent="";return}done++;
+if(+c.value===q[2]){s++;fb.className="fb ok";fb.textContent="Correct"}
+else{fb.className="fb ko";fb.textContent="Réponse attendue : "+q[1][q[2]]}});
+var r=document.getElementById("res");
+r.textContent=done<6?"Répondez aux 6 questions ("+done+"/6).":"Résultat : "+s+" / 6 – "+(s>=5?"seuil atteint.":"seuil non atteint, relisez les modules.")};
+</script>
+</body>
+</html>
