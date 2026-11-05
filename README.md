@@ -1,0 +1,1 @@
+Formation des contrôleurs de Vanguard by Camport sur le management des agents, la discipline, la communication professionnelle, le suivi opérationnel, les principes HSE, la prévention des risques et la gestion des incidents pour une meilleure qualité des prestations de sécurité.
